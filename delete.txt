@@ -1,0 +1,41 @@
+package task;
+import java.io.*;
+import java.sql.*;
+public class Delete {
+	public static void main(String[] args) throws Exception	{
+		Connection con	=	null;
+		Statement	st	=	null;
+		try	{
+			con	=	DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","sV4kR5fN5");
+			System.out.println("Database Connected");
+			st	=	con.createStatement();
+			st.execute("delete from student where studentId=25 ");
+			/*
+			 * rs.next(); int id = rs.getInt("studentId"); String fnm =
+			 * rs.getString("fullName"); String lnm = rs.getString("lastName"); int dptId =
+			 * rs.getInt("departmentId"); String joinDate = rs.getString("joiningDate");
+			 * String stuDate = rs.getString("studentDob"); long mob =
+			 * rs.getLong("mobileNo"); String mail = rs.getString("email");
+			 */
+			//System.out.print(id+" "+fnm+" "+lnm+" "+dptId+" "+joinDate+" "+stuDate+" "+mob+" "+mail+" ");
+			//rs.close();
+			st.close();
+			
+
+		}
+		
+	catch	(Exception exe)	{
+		exe.printStackTrace();
+	}
+		
+		
+	/*
+	 * File file = new
+	 * File("C:\\Users\\faaiz.ali\\Downloads\\POC-Data\\deletestudent.txt");
+	 * BufferedReader br = new BufferedReader(new FileReader(file)); String str;
+	 * while((str = br.readLine()) !=null) System.out.println(str);
+	 */
+		
+	}
+
+}
